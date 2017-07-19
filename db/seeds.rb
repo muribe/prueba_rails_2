@@ -9,3 +9,18 @@
 Item.destroy_all
 User.destroy_all
 Category.destroy_all
+
+u1 = User.create(user: 'user1', mail: 'mail@mail.com')
+u2 = User.create(user: 'user2', mail: 'mail2@mail.com')
+
+c = Category.create!(name: 'category 1')
+c.items.create!(serie: '1234', size: 4, description: 'Lorem ipsum dolor sit amet.',user: u1)
+c.items.create!(serie: '4321', size: 1, description: 'Lorem ipsum dolor sit amet.')
+
+c = Category.create!(name: 'category 2')
+c.items.create!(serie: '1234', size: 6, description: 'Lorem ipsum dolor sit amet.',user: u2)
+c.items.create!(serie: '4321', size: 9, description: 'Lorem ipsum dolor sit amet.',user: u1)
+
+c = Category.create!(name: 'category 3')
+c.items.create!(serie: '1234', size: 20, description: 'Lorem ipsum dolor sit amet.')
+c.items.create!(serie: '4321', size: 22, description: 'Lorem ipsum dolor sit amet.')
