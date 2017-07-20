@@ -1,9 +1,9 @@
 class User < ApplicationRecord
     has_many :items, dependent: :destroy
-    validates :user, presence: true
+    validates :name, presence: true
     validates :mail, uniqueness: true
     before_save :capitalize
     def capitalize
-        user.capitalize!
+        name.capitalize!
     end
 end

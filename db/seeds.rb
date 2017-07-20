@@ -10,8 +10,8 @@ Item.destroy_all
 User.destroy_all
 Category.destroy_all
 
-u1 = User.create(user: 'user1', mail: 'mail@mail.com')
-u2 = User.create(user: 'user2', mail: 'mail2@mail.com')
+u1 = User.create(name: 'user1', mail: 'mail@mail.com')
+u2 = User.create(name: 'user2', mail: 'mail2@mail.com')
 
 c = Category.create!(name: 'category 1')
 c.items.create!(serie: '1234', size: 4, description: 'Lorem ipsum dolor sit amet.',user: u1)
